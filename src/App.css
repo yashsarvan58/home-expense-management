@@ -1,6 +1,9 @@
 *{
     padding: 0px;
     margin: 0px;
+    color: rgba(18, 13, 13, 0.666);
+   
+   
 
 }
 
@@ -66,6 +69,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    border: 1px solid;
     
 }
 .icon{
@@ -99,9 +103,11 @@
     border: none;
     background-color: transparent;
     font-size: larger;
+    
 }
 .dashboard:hover{
     background-color: aliceblue;
+    color: black
 
 }
 .transaction{
@@ -113,6 +119,7 @@
 }
 .transaction:hover{
     background-color: aliceblue;
+    color: black;
 }
 
 .history{
@@ -124,6 +131,7 @@
 }
 .history:hover{
     background-color: aliceblue;
+    color: black;
 }
 
 .profile{
@@ -166,25 +174,145 @@
     justify-content: center;
     gap: 25px;
     padding-top: 40px;
-   
-    
+  
 }
 .expense{
     height: 210px;
     width: 290px;
     background: linear-gradient(#000000,#40AC7C);
     border-radius: 10px;
-    color: aliceblue;
+    
     
 }
 .overview{
     padding: 20px;
+    font-size: large
 }
 .income{
     height: 210px;
     width: 290px;
-    border: solid 1px;
+    border: solid 2px;
     border-radius: 10px;
     border-color: rgb(238, 229, 229);
+    
 }
+.rupee{
+     align-items: center;
+     display: flex;
+     padding-left: 7px;
+     color: rgb(185, 188, 190);
+}
+.rupees{
+    color: rgb(234, 236, 238);
+}
+.Expenses{
+    padding: 20px;
+    font-size: large; 
+
+}
+.totel{
+   padding-left: 20px; 
+   
+}
+.totelincome{
+    height: 50px;
+    width: 250px;
+    background-color: rgba(237, 232, 232, 0.666);
+    border-radius: 7px;
+    color: #40AC7C;
+    font-size: 20px;
+    text-align: center;   
+}
+
+.toteloutcomes{
+    height: 50px;
+    width: 250px;
+    background-color: rgba(245, 244, 244, 0.966);
+    border-radius: 7px;
+    color: blue;
+    font-size: 20px;
+    text-align: center;   
+}
+
+.saving{
+    height: 240px;
+    width: 600px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border-color: rgba(18, 13, 13, 0.666);
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.headings{
+    display: flex;
+    justify-content:space-between ;
+    padding: 5px;
+    border: none;
+    padding-left: 20px;
+}
+
+
+.petrol{
+    height: 100%;
+    width: 300px;
+    font-size: larger;
+    display: flex;
+    align-items: flex-end;
+    justify-content:space-around ;
+    border-left:   dashed;
+    border-right:  dashed ;
+    border-color: rgba(116, 110, 110, 0.666);  
+      
+    
+}
+.electicity{
+    height: 100%;
+    width: 300px;
+    font-size: larger;
+    display: flex;
+    align-items: flex-end;
+    justify-content:space-around ;
+    border-right:  dashed;
+    border-color: rgba(116, 110, 110, 0.666);
+ 
+}
+.heading2{
+
+display: flex;
+height: 150px;
+
+padding: 10px;
+
+}
+.paragraph2{
+   font-size: 20px;
+}
+.savingplan{
+    padding-left: 15px;
+}
+
+.main{
+   
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-around;
+
+}
+
+.mobilerecharge{
+    height: 100%;
+    width: 300px;
+    font-size: larger;
+    display: flex;
+    align-items: flex-end;
+    justify-content:space-around ;
+    border-right:  dashed;
+    border-color: rgba(116, 110, 110, 0.666);
+}
+
+
+
+
 
