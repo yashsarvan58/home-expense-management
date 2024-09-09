@@ -1,24 +1,31 @@
 *{
     padding: 0px;
     margin: 0px;
-    color: rgba(18, 13, 13, 0.666);
-   
-   
-
+    color: #070707aa;
+    
+}
+.image{
+    background-image: url(./images/vecteezy_ai-generative-blurry-shopping-shelves-in-supermarkets-and_29344312.jpg) ;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
 }
 
+.red{
+    color: red;
+}
 
 .container{
-  display: flex;
-  width: 50%;
-  height: 400px;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  margin-top: 70px;
-  text-align: center;
-  background-color: transparent;
-  
+    display: flex;
+    width: 50%;
+    height: 400px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    text-align: center;
+    background-color: transparent;
+    
 }
 .home{
    display: flex;
@@ -104,10 +111,13 @@
     background-color: transparent;
     font-size: larger;
     
+    
+    
 }
 .dashboard:hover{
-    background-color: aliceblue;
-    color: black
+    
+    color: white;
+    backdrop-filter: blur(20px);
 
 }
 .transaction{
@@ -116,10 +126,11 @@
     border: none;
     background-color: transparent;
     font-size: larger;
+    
 }
 .transaction:hover{
-    background-color: aliceblue;
-    color: black;
+    color: white;
+    backdrop-filter: blur(20px);
 }
 
 .history{
@@ -130,8 +141,8 @@
     font-size: larger;
 }
 .history:hover{
-    background-color: aliceblue;
-    color: black;
+    backdrop-filter: blur(20px);
+    color: white;
 }
 
 .profile{
@@ -142,6 +153,7 @@
     align-items: center;
     border: 1px solid rgba(20, 18, 18, 0.214);
     color: rgba(22, 20, 20, 0.866);
+    
 }
 .setting{
 
@@ -173,20 +185,25 @@
     display: flex;
     justify-content: center;
     gap: 25px;
-    padding-top: 40px;
+    padding-top: 40px;   
   
 }
 .expense{
     height: 210px;
     width: 290px;
-    background: linear-gradient(#000000,#40AC7C);
+    background: transparent;
+    backdrop-filter: blur(20px);
     border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 1px 1px 1px 1px;
+    border-color: white;
     
     
 }
 .overview{
     padding: 20px;
-    font-size: large
+    font-size: large;
+    
 }
 .income{
     height: 210px;
@@ -194,13 +211,16 @@
     border: solid 2px;
     border-radius: 10px;
     border-color: rgb(238, 229, 229);
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 1px 1px;
     
 }
 .rupee{
      align-items: center;
      display: flex;
      padding-left: 7px;
-     color: rgb(185, 188, 190);
+     color: #2e2222aa;
 }
 .rupees{
     color: rgb(234, 236, 238);
@@ -213,37 +233,41 @@
 .totel{
    padding-left: 20px; 
    
+   
 }
 .totelincome{
     height: 50px;
     width: 250px;
-    background-color: rgba(237, 232, 232, 0.666);
+    background-color: rgba(245, 244, 244, 0.966);
+    backdrop-filter: blur(20px);
     border-radius: 7px;
     color: #40AC7C;
     font-size: 20px;
     text-align: center;   
 }
-
 .toteloutcomes{
     height: 50px;
     width: 250px;
     background-color: rgba(245, 244, 244, 0.966);
+    backdrop-filter: blur(20px);
     border-radius: 7px;
     color: blue;
     font-size: 20px;
     text-align: center;   
 }
-
 .saving{
     height: 240px;
     width: 600px;
     margin-top: 20px;
-    border-radius: 7px;
-    border-color: rgba(18, 13, 13, 0.666);
-    border: 1px solid;
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: rgb(238, 229, 229);
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 1px 1px;
 }
 .headings{
     display: flex;
@@ -252,8 +276,6 @@
     border: none;
     padding-left: 20px;
 }
-
-
 .petrol{
     height: 100%;
     width: 300px;
@@ -263,9 +285,7 @@
     justify-content:space-around ;
     border-left:   dashed;
     border-right:  dashed ;
-    border-color: rgba(116, 110, 110, 0.666);  
-      
-    
+    border-color: rgba(116, 110, 110, 0.666);    
 }
 .electicity{
     height: 100%;
@@ -276,29 +296,25 @@
     justify-content:space-around ;
     border-right:  dashed;
     border-color: rgba(116, 110, 110, 0.666);
- 
 }
-.heading2{
 
+.heading2{
 display: flex;
 height: 150px;
-
 padding: 10px;
-
+background: transparent;
 }
 .paragraph2{
    font-size: 20px;
 }
 .savingplan{
     padding-left: 15px;
+    
 }
-
-.main{
-   
+.main{  
     display: flex;
     padding-top: 10px;
     justify-content: space-around;
-
 }
 
 .mobilerecharge{
@@ -310,6 +326,84 @@ padding: 10px;
     justify-content:space-around ;
     border-right:  dashed;
     border-color: rgba(116, 110, 110, 0.666);
+}
+
+.add{     
+    width: 600px;
+    margin: 0px auto;
+    box-shadow: 100px;
+    border-radius: 7px;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgb(238, 229, 229);
+    
+    
+}
+
+.trasactionheading{ 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(43, 40, 40);
+    color: rgb(193, 198, 203);
+    border-radius: 7px;
+}
+
+.amount{ 
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+.haed{
+    margin-left: 40px;
+}
+.types{
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.type{
+    height: 30px;
+    width: 500px;
+    margin-left: 40px;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+.exbutton{
+    width:505px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.remark{
+    height: 30px;
+    width: 500px;
+    margin-left: 40px;
+    border-radius: 7px;
+    padding-left: 5px;
+   
+}
+
+.addbutton{
+    width:200px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 180PX;
+    border-radius: 7px;
+    font-size: larger ;
+    
+
+}
+.addbutton:hover{
+    backdrop-filter: blur(20px);
+    cursor: pointer;
+    box-shadow: 20px;
+    background-color: transparent;
 }
 
 

@@ -1,71 +1,91 @@
 
-import React, { useState } from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from "react-toastify";
-
-const USERNAME = "yashsarvan77"
-const PASSWORD = "17071997"
-
+import { toast } from 'react-toastify';
+import { Formik, Form, Field} from 'formik';
+import * as Yup from 'yup';
 
 
+const validationSchema = Yup.object({
+  username: Yup.string().required('Username is required'),
+  password: Yup.string().min(8).required('Password is required'),
+});
 
 const Login = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
- const navigate=useNavigate()
+  const navigate = useNavigate();
 
+  
+  const handleSubmit = (values) => {
+    const { username, password } = values;
+    const USERNAME = "yashsarvan77";
+    const PASSWORD = "17071997";
 
-
-  const checkLogin = ()=>{
-    if(username == USERNAME && password == PASSWORD){
-      localStorage.setItem("is logged in","1")
-      toast("sucsessfully logged in ")
-      navigate('/home')
-    }else{
-      toast("invalid user or password ")
+    if (username === USERNAME && password === PASSWORD) {
+      localStorage.setItem("is logged in", "1");
+      toast("Successfully logged in");
+      navigate("/home");
+    } 
+    else{
+      toast("Invalid username or password");
     }
+  };
 
-  }
   return (
-    <>
+    <div className="container">
+      <img className="image" src="src/images/grocery.webp" alt="grocery" />
 
-      <div className="container">
-      <img  className="image"  src="src\images\grocery.webp" alt="grocery" />
-      
-       <div>
-       <div className="home">
+      <div>
+        <div className="home">
           <h1> LOGIN HOME </h1>
         </div>
 
-        <div className="inputs-details">
-         <input className="username"
-          placeholder="username" 
-          type="username" 
-          value={username}
-          onChange={e=>setUsername(e.target.value)} />
+        <Formik
+          initialValues={{ username: '', password: '' }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+          
+        >
+          {({values, errors, touched,}) => (
+            <Form >
+              <div className="inputs-details">
+                <div>
+                  <Field
+                    className="username"
+                    name="username"
+                    placeholder="Username"
+                    type="text"
+ 
 
-         <input className="password"
-          placeholder="password"
-          type="password"
-          value={password}
-          onChange={e=>setPassword(e.target.value)}  />
+                  />
+                {errors.username && touched.username && <span className='red'>{errors.username}</span>}
+                </div>
 
-        </div>
-        <br />
-         <div><button  className="button" onClick={checkLogin} type="submit">Login</button></div>
-       </div>
+                <div>
+                  <Field
+                    className="password"
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    
+                    
+                  />
+                {errors.password && touched.password && <span className='red'>{errors.password}</span>}
+                  
+                </div>
+              </div>
+              <br />
+              <button className="button" type="submit">
+                Login
+              </button>
+            </Form>
+          )}
+        </Formik>
       </div>
-      
-    </>
+    </div>
   );
 };
 
 export default Login;
-
-
-
-
-
 
 
 
