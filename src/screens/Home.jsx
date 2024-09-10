@@ -6,11 +6,25 @@ import { CgProfile } from "react-icons/cg";
 import { FaGasPump } from "react-icons/fa";
 import { MdElectricBolt } from "react-icons/md";
 import { TbDeviceMobileMessage } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
 
 const Home = () => {
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/transactions')
+  }
+ 
   return (
     <>
-      <div className="image">
+      <div className="image2">
+        
         <div className="heading">
           <div className="icon">
             <IoMdHome fontSize={40} />
@@ -24,13 +38,13 @@ const Home = () => {
 
           <div className="profile">
             <div className="setting">
-              <button>
+              <button className="settingicon">
                 <IoSettingsOutline className="settingicon" fontSize={25} />
               </button>
-              <button>
+              <button className="bellicon">
                 <FaRegBell className="bellicon" fontSize={25} />
               </button>
-              <button>
+              <button className="profileicon">
                 <CgProfile className="profileicon" fontSize={25} />
               </button>
             </div>
@@ -90,7 +104,7 @@ const Home = () => {
           <h1 className="trasactionheading">Add Transactions</h1>
           <div className="amount">
             <h2 className="haed">amount:</h2>
-            <input className="type" type="amount" placeholder="amount" />
+            <input className="type" type="number" placeholder="enter the amount" />
 
             <h2 className="types">type</h2>
 
@@ -102,8 +116,10 @@ const Home = () => {
             <h2 className="haed">Remark</h2>
 
             <input className="remark" type="text" placeholder="Enter a remark"/>
+            <h2 className="haed">Date</h2>
+            <input className="date" type="date" />
             <div>
-              <button className="addbutton">Add transaction</button>
+              <button className="addbutton"onClick={handleClick} >Add transaction </button >
             </div>
           </div>
         </div>
@@ -113,3 +129,4 @@ const Home = () => {
 };
 
 export default Home;
+

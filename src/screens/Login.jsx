@@ -31,31 +31,26 @@ const Login = () => {
   };
 
   return (
+
+    <div className='main-container'>
     <div className="container">
-      <img className="image" src="src/images/grocery.webp" alt="grocery" />
-
+        
       <div>
-        <div className="home">
-          <h1> LOGIN HOME </h1>
-        </div>
-
-        <Formik
+        <Formik 
           initialValues={{ username: '', password: '' }}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-          
-        >
-          {({values, errors, touched,}) => (
-            <Form >
+          onSubmit={handleSubmit}  
+          >
+          {({ errors, touched,}) => (
+            <Form  >
+              <div className='manager'><h1 > HOME EXPENSE MANAGER </h1></div>
               <div className="inputs-details">
-                <div>
+                <div className='form'>
                   <Field
                     className="username"
                     name="username"
                     placeholder="Username"
                     type="text"
- 
-
                   />
                 {errors.username && touched.username && <span className='red'>{errors.username}</span>}
                 </div>
@@ -81,6 +76,7 @@ const Login = () => {
           )}
         </Formik>
       </div>
+    </div>
     </div>
   );
 };
