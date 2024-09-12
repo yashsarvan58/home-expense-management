@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 const Transactions = () => {
   return (
     <>
-    <table className='table' width={"100%"} border={"1px"} >
+    <table className='transaction-table' width={"100%"} border={"1px"} >
         <thead>
             <tr>
                 <th>Amount</th>
@@ -20,8 +20,129 @@ const Transactions = () => {
             <td>a</td>
             <td>s</td>
             <td>h</td>
+          </tr>
+          <tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
+
+          </tr><tr>
+            <td>y</td>
+            <td>a</td>
+            <td>s</td>
+            <td>h</td>
 
           </tr>
+          
         </tbody>
     </table>
       

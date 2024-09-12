@@ -15,6 +15,10 @@ const Routes = createBrowserRouter([
           path:"/home",
           element:<Home/>
         },
+        // {
+        //   path:"/register",
+        //   element:<Register/>
+        // },
         {
           path:"/transactions",
           element:<Transactions/>
