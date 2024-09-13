@@ -92,10 +92,11 @@ const Login = () => {
              <button  className="button" type="submit">
                 Login
               </button>
-              {/* <div>
-                <h6>Don't have an Account</h6>
-              <a href=""> Registration </a>
-              </div> */}
+              
+                <div className="dont">
+                <p >Don't have an Account<a href=""> Registration </a></p>  
+              </div>
+              
             </Form>
           )}
         </Formik>

@@ -1,152 +1,155 @@
-// import { Formik } from 'formik';
-// import React from 'react';
-// import { FaUserAlt, FaUserEdit } from "react-icons/fa";
-// import { ImCheckboxChecked } from 'react-icons/im';
-// import { RiLockPasswordFill } from 'react-icons/ri';
-// import { Link, useNavigate } from 'react-router-dom';
-// import * as yup from 'yup';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as yup from "yup";
+import React from "react";
+import { Link } from "react-router-dom";
 
+const phoneRegExp = /^(\+\d{1,3}[- ]?)?\d{10}$/;
 
-// const RegistrationSchema = yup.object().shape({
-//     name: yup.string().min(2).max(20).required(),
-//     userName: yup.string().min(5).required(),
-//     password: yup.string().min(8).required(),
-//     confirmPassword: yup.string().oneOf([yup.ref('password')], 'Passwords must match').required()
-// });
+const validationSchema = yup.object().shape({
+  name: yup.string().required("Name is required"),
+  mobile: yup
+    .string()
+    .matches(phoneRegExp, "Mobile number is not valid")
+    .required("Mobile number is required"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .min(4, "Password must be at least 4 characters"),
+  conformpassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
+});
 
-// const Registration = () => {
-//     const [register] = useRegisterMutation();
-//     const navigate = useNavigate();
+function Register() {
+  return (
+    <div className="flex justify-center font-semibold m-[150px]">
+      <div className="flex justify-center items-center w-[300px] h-[200px]">
+        <Formik
+          initialValues={{
+            name: "",
+            mobile: "",
+            dob: "",
+            email: "",
+            password: "",
+            conformpassword: "",
+          }}
+          validationSchema={validationSchema}
+          onSubmit={(values, actions) => {
+            console.log(values);
+            actions.resetForm();
+          }}
+        >
+          {({ values, handleChange }) => (
+            <Form>
+              <div className="border border-gray-400 w-[400px] h-[500px] p-10 pl-32 mt-10 gap-6">
+                <h1 className="font-bold ml-20 text-3xl mb-8">Register</h1>
+                <div className="mb-4">
+                  <label className="text-xl">Name</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px]"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="name"
+                    component="div"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="text-xl">Email</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px]"
+                    name="email"
+                    type="text"
+                    placeholder="Enter your email"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="email"
+                    component="div"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="text-xl">Mobile</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px]"
+                    name="mobile"
+                    type="text"
+                    placeholder="Enter your mobile"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="mobile"
+                    component="div"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="text-xl">Date Of Birth</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px]"
+                    name="dob"
+                    type="date"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="dob"
+                    component="div"
+                  />
+                </div>
+                <div>
+                  <label className="text-xl">Password</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px] mb-4"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="password"
+                    component="div"
+                  />
+                </div>
+                <div>
+                  <label className="text-xl">Confirm Password</label>
+                  <br />
+                  <Field
+                    className="border border-black placeholder:p-3 text-xl w-[250px]"
+                    name="conformpassword"
+                    type="password"
+                    placeholder="Enter the same password"
+                  />
+                  <ErrorMessage
+                    className="text-red-800"
+                    name="conformpassword"
+                    component="div"
+                  />
+                </div>
+                <button
+                  className="bg-sky-600 text-white border rounded border-black w-24 ml-24 mt-10"
+                  type="submit"
+                >
+                  <Link to="/"></Link>Register
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </div>
+  );
+}
 
-//     return (
-//         <div className="background min-h-screen flex items-center justify-center bg-gray-100 p-6">
-//             <Formik
-//                 initialValues={{
-//                     name: '',
-//                     userName: '',
-//                     password: '',
-//                     confirmPassword: ''
-//                 }}
-//                 validationSchema={RegistrationSchema}
-
-//                 onSubmit={(values, { setSubmitting }) => {
-//                     console.log(values,"kkkk");
-
-//                     register(values)
-//                         .then((res) => {
-//                         console.log(res)
-//                         const authToken = res.data.token
-//                         console.log(authToken)
-//                         localStorage.setItem("authToken", authToken )
-                        
-//                             if (authToken){
-                            
-//                                 navigate("/home")
-//                             }
-//                         })
-//                         .catch((error) => {
-                            
-//                             console.error('Registration error:', error);
-//                         });
-
-//                     setSubmitting(false);
-//                 }}
-//             >
-//                 {({ values, errors, handleChange, handleBlur, isSubmitting, touched, handleSubmit }) => (
-//                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
-//                         <h2 className="text-2xl font-bold text-center mb-4">Registration</h2>
-
-//                         <div className="mb-4">
-//                             <label className="block text-gray-700 text-sm font-bold mb-2">
-//                                 <FaUserAlt className="inline mr-2" />
-//                                 Name
-//                             </label>
-//                             <input
-//                                 type="text"
-//                                 name="name"
-//                                 className="border rounded w-full py-2 px-3 text-gray-700"
-//                                 value={values.name}
-//                                 onChange={handleChange}
-//                                 onBlur={handleBlur}
-//                                 placeholder="NAME"
-//                             />
-//                             <span className="text-red-500 text-xs">{touched.name && errors.name}</span>
-//                         </div>
-
-//                         <div className="mb-4">
-//                             <label className="block text-gray-700 text-sm font-bold mb-2">
-//                                 <FaUserEdit className="inline mr-2" />
-//                                 Username
-//                             </label>
-//                             <input
-//                                 type="text"
-//                                 name="userName"
-//                                 className="border rounded w-full py-2 px-3 text-gray-700"
-//                                 value={values.userName}
-//                                 onChange={handleChange}
-//                                 onBlur={handleBlur}
-//                                 placeholder="USERNAME"
-//                             />
-//                             <span className="text-red-500 text-xs">{touched.userName && errors.userName}</span>
-//                         </div>
-
-//                         <div className="mb-4">
-//                             <label className="block text-gray-700 text-sm font-bold mb-2">
-//                                 <RiLockPasswordFill className="inline mr-2" />
-//                                 Password
-//                             </label>
-//                             <input
-//                                 type="password"
-//                                 name="password"
-//                                 className="border rounded w-full py-2 px-3 text-gray-700"
-//                                 value={values.password}
-//                                 onChange={handleChange}
-//                                 onBlur={handleBlur}
-//                                 placeholder="PASSWORD"
-//                             />
-//                             <span className="text-red-500 text-xs">{touched.password && errors.password}</span>
-//                         </div>
-
-//                         <div className="mb-6">
-//                             <label className="block text-gray-700 text-sm font-bold mb-2">
-//                                 <ImCheckboxChecked className="inline mr-2" />
-//                                 Confirm Password
-//                             </label>
-//                             <input
-//                                 type="password"
-//                                 name="confirmPassword"
-//                                 className="border rounded w-full py-2 px-3 text-gray-700"
-//                                 value={values.confirmPassword}
-//                                 onChange={handleChange}
-//                                 onBlur={handleBlur}
-//                                 placeholder="CONFIRM PASSWORD"
-//                             />
-//                             <span className="text-red-500 text-xs">{touched.confirmPassword && errors.confirmPassword}</span>
-//                         </div>
-
-//                         <div className="flex items-center justify-between">
-//                             <button
-//                                 type="submit"
-//                                 disabled={isSubmitting}
-
-//                                 className="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-//                             >
-//                                 Create Account
-//                             </button>
-//                         </div>
-
-//                         <p className="mt-4 text-gray-600 text-sm text-center">
-//                             Already Have An Account? <Link to="/login" className="text-blue-500 hover:underline">Sign In</Link>
-//                         </p>
-//                     </form>
-//                 )}
-//             </Formik>
-
-//             <p className="text-black bg-gray-100 font-mono ml-[50px] font-bold">
-              
-//             </p>
-//         </div>
-//     );
-// };
-
-// export default Registration;
+export default Register;
