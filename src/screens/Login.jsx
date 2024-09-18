@@ -10,17 +10,17 @@ const validationSchema = Yup.object({
   password: Yup.string().min(5).required("Password is required"),
 });
 
-const submitForm = async (formObj) => {
-    formObj.adminCode = "ADMIN1234";
-    setErrorMsg("")
-    let response = await ApiService.fetchData("login","POST",formObj);
-    console.log(response)
-    if(response.status != 'err'){
-        localStorage.setItem("currentUsers", JSON.stringify(response));
-        navigate('/admin');
-    }else{
-        setErrorMsg(response.message)
-    }}
+// const submitForm = async (formObj) => {
+//     formObj.adminCode = "ADMIN1234";
+//     setErrorMsg("")
+//     let response = await ApiService.fetchData("login","POST",formObj);
+//     console.log(response)
+//     if(response.status != 'err'){
+//         localStorage.setItem("currentUsers", JSON.stringify(response));
+//         navigate('/admin');
+//     }else{
+//         setErrorMsg(response.message)
+//     }}
 
 const Login = () => {
   const navigate = useNavigate();

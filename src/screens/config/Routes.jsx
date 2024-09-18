@@ -3,6 +3,7 @@ import Login from '../Login'
 import Home from '../Home'
 import Transactions from '../../Transactions'
 import Register from '../Register'
+import Auth from '../../components/Auth'
 
 const Routes = createBrowserRouter([
     
@@ -10,7 +11,8 @@ const Routes = createBrowserRouter([
     
         {
           path:"/",
-          element: <Login/>       
+          element:<Login/>
+      
         },
         {
           path:"/home",

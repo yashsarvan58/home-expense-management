@@ -12,10 +12,24 @@ const homeExpenseManegerApiSlice = createApi({
         body:loginData
       })
     }),
+    transactionAdd:builder.mutation({
+      query:(body)=>({
+        url:"/transaction/add-transaction",
+        method:"POST",
+        body
+      })
+    }),
+    transactionGet:builder.query({
+      query:(transactiondata)=>({
+        url:"/transaction/get-transaction",
+        method:"GET",
+        body:transactiondata
+      })
+    }),
     
     
   })
 })
 
 export default homeExpenseManegerApiSlice
-export const { useLoginMutation} = homeExpenseManegerApiSlice
+export const { useLoginMutation,useTransactionAddMutation,useTransactionGetQuery} = homeExpenseManegerApiSlice
