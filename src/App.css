@@ -1,4 +1,4 @@
-*{
+/* *{
     padding: 0px;
     margin: 0px;
     color: rgb(20, 41, 55);   
@@ -23,7 +23,7 @@
     
 }
 .container{
-    /* border: 2px solid rgb(234, 230, 230); */
+    
     background-color: transparent;
     backdrop-filter: blur(7px);
 }
@@ -417,7 +417,7 @@ background: transparent;
 
 .tb{
     border: 2px solid;
-    /* width: 100%; */
+    
     border-collapse: collapse;
 }
 
@@ -425,4 +425,4 @@ background: transparent;
 
 
 
-
+ */
